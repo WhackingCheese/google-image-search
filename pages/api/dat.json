@@ -1,0 +1,170 @@
+{
+  "kind": "customsearch#search",
+  "url": {
+    "type": "application/json",
+    "template": "https://www.googleapis.com/customsearch/v1?q={searchTerms}&num={count?}&start={startIndex?}&lr={language?}&safe={safe?}&cx={cx?}&sort={sort?}&filter={filter?}&gl={gl?}&cr={cr?}&googlehost={googleHost?}&c2coff={disableCnTwTranslation?}&hq={hq?}&hl={hl?}&siteSearch={siteSearch?}&siteSearchFilter={siteSearchFilter?}&exactTerms={exactTerms?}&excludeTerms={excludeTerms?}&linkSite={linkSite?}&orTerms={orTerms?}&relatedSite={relatedSite?}&dateRestrict={dateRestrict?}&lowRange={lowRange?}&highRange={highRange?}&searchType={searchType}&fileType={fileType?}&rights={rights?}&imgSize={imgSize?}&imgType={imgType?}&imgColorType={imgColorType?}&imgDominantColor={imgDominantColor?}&alt=json"
+  },
+  "queries": {
+    "request": [
+      [
+        null
+      ]
+    ],
+    "nextPage": [
+      [
+        null
+      ]
+    ]
+  },
+  "context": {
+    "title": "Fréttamyndir"
+  },
+  "searchInformation": {
+    "searchTime": 0.548088,
+    "formattedSearchTime": "0.55",
+    "totalResults": "7970000",
+    "formattedTotalResults": "7,970,000"
+  },
+  "items": [
+    {
+      "kind": "customsearch#result",
+      "title": "Gosið í Geldingadölum í beinni",
+      "htmlTitle": "Gosið í Geldingadölum í beinni",
+      "link": "https://www.mbl.is/a/img/haus_new/mbl-dark.svg",
+      "displayLink": "www.mbl.is",
+      "snippet": "Gosið í Geldingadölum í beinni",
+      "htmlSnippet": "Gosið í Geldingadölum í beinni",
+      "mime": "image/svg+xml",
+      "fileFormat": "image/svg+xml",
+      "image": [
+        null
+      ]
+    },
+    {
+      "kind": "customsearch#result",
+      "title": "Þrír nú látist eftir bólusetningu hér á landi",
+      "htmlTitle": "Þrír nú látist eftir bólusetningu hér á landi",
+      "link": "https://m2.mbl.is/8N7HmSF6qvk6kxGoLsoSr2xWyqI=/1640x1093/smart/frimg/6/19/619478.jpg",
+      "displayLink": "www.mbl.is",
+      "snippet": "Þrír nú látist eftir bólusetningu hér á landi",
+      "htmlSnippet": "Þrír nú látist eftir bólusetningu hér á landi",
+      "mime": "image/jpeg",
+      "fileFormat": "image/jpeg",
+      "image": [
+        null
+      ]
+    },
+    {
+      "kind": "customsearch#result",
+      "title": "Fylltar kartöflur með beikoni",
+      "htmlTitle": "Fylltar kartöflur með beikoni",
+      "link": "https://mbl.is/a/img/mbl_1400.png",
+      "displayLink": "www.mbl.is",
+      "snippet": "Fylltar kartöflur með beikoni",
+      "htmlSnippet": "Fylltar kartöflur með beikoni",
+      "mime": "image/png",
+      "fileFormat": "image/png",
+      "image": [
+        null
+      ]
+    },
+    {
+      "kind": "customsearch#result",
+      "title": "mbl.is atvinna - Home | Facebook",
+      "htmlTitle": "<b>mbl</b>.is atvinna - Home | Facebook",
+      "link": "https://lookaside.fbsbx.com/lookaside/crawler/media/?media_id=1889292554648089",
+      "displayLink": "www.mbl.is",
+      "snippet": "mbl.is atvinna - Home | Facebook",
+      "htmlSnippet": "<b>mbl</b>.is atvinna - Home | Facebook",
+      "mime": "image/",
+      "fileFormat": "image/",
+      "image": [
+        null
+      ]
+    },
+    {
+      "kind": "customsearch#result",
+      "title": "Kosningavakt á mbl.is",
+      "htmlTitle": "Kosningavakt á <b>mbl</b>.is",
+      "link": "https://m2.mbl.is/4ztFyvSCV-YyMFanugQlYX7vXmg=/1640x1093/smart/frimg/6/42/642401.jpg",
+      "displayLink": "www.mbl.is",
+      "snippet": "Kosningavakt á mbl.is",
+      "htmlSnippet": "Kosningavakt á <b>mbl</b>.is",
+      "mime": "image/jpeg",
+      "fileFormat": "image/jpeg",
+      "image": [
+        null
+      ]
+    },
+    {
+      "kind": "customsearch#result",
+      "title": "Tökur á Bachelor fara fram á Íslandi",
+      "htmlTitle": "Tökur á Bachelor fara fram á Íslandi",
+      "link": "https://cdn.mbl.is/frimg/1/30/96/1309601.jpg",
+      "displayLink": "www.mbl.is",
+      "snippet": "Tökur á Bachelor fara fram á Íslandi",
+      "htmlSnippet": "Tökur á Bachelor fara fram á Íslandi",
+      "mime": "image/jpeg",
+      "fileFormat": "image/jpeg",
+      "image": [
+        null
+      ]
+    },
+    {
+      "kind": "customsearch#result",
+      "title": "160.000 verða boðuð í örvunarbólusetningu",
+      "htmlTitle": "160.000 verða boðuð í örvunarbólusetningu",
+      "link": "https://m2.mbl.is/QPdnED7UkXo6lE1z8hggDFPxe6w=/1640x1093/smart/frimg/1/29/30/1293078.jpg",
+      "displayLink": "www.mbl.is",
+      "snippet": "160.000 verða boðuð í örvunarbólusetningu",
+      "htmlSnippet": "160.000 verða boðuð í örvunarbólusetningu",
+      "mime": "image/jpeg",
+      "fileFormat": "image/jpeg",
+      "image": [
+        null
+      ]
+    },
+    {
+      "kind": "customsearch#result",
+      "title": "mbl.is atvinna - Home | Facebook",
+      "htmlTitle": "<b>mbl</b>.is atvinna - Home | Facebook",
+      "link": "https://lookaside.fbsbx.com/lookaside/crawler/media/?media_id=1889293024648042",
+      "displayLink": "www.mbl.is",
+      "snippet": "mbl.is atvinna - Home | Facebook",
+      "htmlSnippet": "<b>mbl</b>.is atvinna - Home | Facebook",
+      "mime": "image/",
+      "fileFormat": "image/",
+      "image": [
+        null
+      ]
+    },
+    {
+      "kind": "customsearch#result",
+      "title": "Bingó - fjölskyldugleði á mbl.is",
+      "htmlTitle": "Bingó - fjölskyldugleði á <b>mbl</b>.is",
+      "link": "https://www.mbl.is/a/k100/img/promos/bingo_360x200.jpg",
+      "displayLink": "www.mbl.is",
+      "snippet": "Bingó - fjölskyldugleði á mbl.is",
+      "htmlSnippet": "Bingó - fjölskyldugleði á <b>mbl</b>.is",
+      "mime": "image/jpeg",
+      "fileFormat": "image/jpeg",
+      "image": [
+        null
+      ]
+    },
+    {
+      "kind": "customsearch#result",
+      "title": "Minningar og andlát",
+      "htmlTitle": "Minningar og andlát",
+      "link": "https://www.mbl.is/img/hauslogo/mbl.inverted.svg",
+      "displayLink": "www.mbl.is",
+      "snippet": "Minningar og andlát",
+      "htmlSnippet": "Minningar og andlát",
+      "mime": "image/svg+xml",
+      "fileFormat": "image/svg+xml",
+      "image": [
+        null
+      ]
+    }
+  ]
+}
