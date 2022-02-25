@@ -1,8 +1,13 @@
 import { useEffect, useState } from 'react';
 import * as styles from '../styles/index.styles';
 
+/**
+ * Main page component. Relatively simple page so everything for the site is here.
+ * @returns Main page component.
+ */
 export default function Home() {
 
+  // Defining all necessary app states.
   const [ query, setQuery ] = useState("");
   const [ images, setImages ] = useState([]);
   const [ hasMore, setHasMore ] = useState(true);
@@ -10,6 +15,11 @@ export default function Home() {
   const [ resultCount, setResultCount ] = useState();
   const [ error, setError ] = useState(false);
 
+  /**
+   * callAPI function, calls the api with state variables for start and query.
+   * @param {*} start The start index of the search.
+   * @returns         Data resulting from API.
+   */
   const callAPI = async (start = images.length) => {
     const q = encodeURIComponent(query);
     const s = encodeURIComponent(start);
@@ -34,11 +44,11 @@ export default function Home() {
     return data;
   }
 
-  const setup = () => {
-  }
-
+  /**
+   * Infinite scrolling next handler function. Calls the API and fetches the next set of results.
+   * @returns Next 10 images using the current query.
+   */
   const getMoreImages = () => {
-    // INFINITE SCROLLING LOAD
     if (error) return;
     if (images.length >= 100) {
       setHasMore(false);
@@ -53,6 +63,9 @@ export default function Home() {
     })
   }
 
+  /**
+   * Initial load handler, prevents an API call with no search query input upon page load.
+   */
   useEffect(() => {
     // INITIAL LOAD
     if (!rendered) {
@@ -60,6 +73,9 @@ export default function Home() {
     }
   }, [rendered]);
 
+  /**
+   * Query effect. Calls the API for a new search if text is no longer being typed into the search box, wait is 0.5seconds from last input. Resets if text is typed. 
+   */
   useEffect(() => {
     if (!rendered) return;
     if (query === "") {
@@ -81,6 +97,9 @@ export default function Home() {
     return () => clearTimeout(timeOutId);
   }, [query]);
 
+  /**
+   * Checks if more results are available when new images are loaded or resultCount is updated, sets state if not.
+   */
   useEffect(() => {
     if (error) return;
     if (resultCount <= images.length) {
@@ -88,6 +107,9 @@ export default function Home() {
     }
   }, [resultCount, images]);
 
+  /**
+   * Main render function for the component. Renders the entire website conditionally if no errors are present and all data and flags are as they should be.
+   */
   return (
     <>
     <styles.Background/>

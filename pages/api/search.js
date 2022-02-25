@@ -1,9 +1,23 @@
+/**
+ * API middleware for calling the Google Custom Search API with a secure API key.
+ * @param {*} req http request.
+ * @param {*} res http response.
+ * @returns       Result from API call.
+ */
 export default async function handler(req, res) {
   const q = req.query.q;
   const s = req.query.s;
   const start = parseInt(s);
 
-  if (req.method !== 'GET' || q === undefined || s === undefined || isNaN(start) || start >= 100) {
+  // Checks if the request is valid, correctly formed etc.
+  if (
+    req.method !== 'GET' ||
+    q === undefined ||
+    s === undefined ||
+    Object.keys(req.query).length > 2 ||
+    isNaN(start) ||
+    start >= 100
+  ) {
     res.status(400).send('bad request');
     return;
   }
