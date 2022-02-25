@@ -93,7 +93,6 @@ export default function Home() {
         const count = parseInt("searchInformation" in data ? data.searchInformation.totalResults : 0);
         if ("searchInformation" in data) setError(false);
         setResultCount(count);
-        console.log(data);
       });
     }, 1000);
     return () => clearTimeout(timeOutId);
