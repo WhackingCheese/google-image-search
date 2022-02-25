@@ -1,7 +1,23 @@
 import styled from "styled-components";
 import InfiniteScroll from "react-infinite-scroll-component";
 
+export const Background = styled.div`
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(42deg, #ffffff, #dbaf72, #846ca5);
+  background-size: 600% 600%;
+  animation: AnimationName 16s ease infinite;
+
+  @keyframes AnimationName {
+    0% { background-position: 0% 50% }
+    50% { background-position: 100% 50% }
+    100% { background-position: 0% 50% }
+  }
+`;
+
 export const Container = styled.div`
+  position: relative;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
@@ -17,6 +33,9 @@ export const Title = styled.h1`
   margin: 0;
   font-size: 4rem;
   transition: font-size 0.5s;
+  color: white;
+  font-weight: 700;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 
   @media screen and (max-width: 768px) {
     font-size: 3rem;
@@ -31,13 +50,10 @@ export const Input = styled.input`
   font-size: 1.5rem;
   padding: 0.75rem;
   width: 500px;
-  border: 1px solid grey;
   outline: none;
   transition: font-size 0.5s, padding 0.5s;
-
-  &:focus {
-    border: 2px solid black;
-  }
+  border: none;
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.05);
 
   @media screen and (max-width: 768px) {
     width: 70%;
@@ -53,7 +69,7 @@ export const Input = styled.input`
 `;
 
 export const ImagesContainerInf = styled(InfiniteScroll)`
-  border-top: 1px solid black;
+  border-top: 1px solid white;
   padding-top: 2em;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -73,10 +89,18 @@ export const ImagesContainerInf = styled(InfiniteScroll)`
 export const ImageContainer = styled.div`
   transition: transform 0.5s;
   background-color: white;
+  cursor: pointer;
+  height: 100%;
 
   &:hover {
     transform: scale(1.05);
   }
+`;
+
+export const ImageLink = styled.a`
+  text-decoration: none;
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.05);
+  aspect-ratio: 1.5 / 1;
 `;
 
 export const Image = styled.img`
@@ -87,7 +111,6 @@ export const Image = styled.img`
   object-fit: contain;
   object-position: center center;
   transition: object-fit 0.5s;
-  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.05);
 `;
 
 export const Error = styled.p`
@@ -101,6 +124,8 @@ export const LargeContainer = styled.div`
 
 export const EndMessage = styled.p`
   text-align: center;
+  font-style: italic;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 `;
 
 const LoadingImage = styled.div`
@@ -158,6 +183,10 @@ export const UpButton = styled.div`
   height: 5em;
   right: 2em;
   bottom: 2em;
+
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 export const UpArrow = styled.div`

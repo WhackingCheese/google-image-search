@@ -1,5 +1,3 @@
-import dat from './dat.json';
-
 export default async function handler(req, res) {
   const q = req.query.q;
   const s = req.query.s;
@@ -25,5 +23,5 @@ export default async function handler(req, res) {
     return;
   }
 
-  res.status(200).json(dat);
+  res.status(result.status).json(data);
 }

@@ -1,12 +1,9 @@
 import { useEffect, useState } from 'react';
-import styled from 'styled-components';
 import * as styles from '../styles/index.styles';
 
 export default function Home() {
 
-  const defaultQuery = "Súðavík";
-
-  const [ query, setQuery ] = useState(defaultQuery);
+  const [ query, setQuery ] = useState("");
   const [ images, setImages ] = useState([]);
   const [ hasMore, setHasMore ] = useState(true);
   const [ rendered, setRendered ] = useState();
@@ -38,13 +35,6 @@ export default function Home() {
   }
 
   const setup = () => {
-    if (error) return;
-    setHasMore(true);
-    callAPI(0).then((data) => {
-      setImages(data.items);
-      const count = parseInt(data.searchInformation.totalResults);
-      setResultCount(count);
-    });
   }
 
   const getMoreImages = () => {
@@ -66,33 +56,50 @@ export default function Home() {
   useEffect(() => {
     // INITIAL LOAD
     if (!rendered) {
-      setup();
       setRendered(true);
     }
   }, [rendered]);
 
   useEffect(() => {
     if (!rendered) return;
+    if (query === "") {
+      setImages([]);
+      setHasMore(false);
+      return;
+    }
 
     const timeOutId = setTimeout(() => {
       // QUERY CHANGE LOAD
-      setError(false);
-      setup();
+      setHasMore(true);
+      callAPI(0).then((data) => {
+        setImages(data.items);
+        const count = parseInt("searchInformation" in data ? data.searchInformation.totalResults : 0);
+        if ("searchInformation" in data) setError(false);
+        setResultCount(count);
+      });
     }, 1000);
     return () => clearTimeout(timeOutId);
   }, [query]);
 
   useEffect(() => {
+    if (error) return;
     if (resultCount <= images.length) {
       setHasMore(false);
     }
   }, [resultCount, images]);
 
   return (
+    <>
+    <styles.Background/>
     <styles.Container>
       <styles.Title>Myndaleit</styles.Title>
       <styles.Input
-        onChange={event => setQuery(event.target.value ? event.target.value : "test")}
+        onChange={event => {
+          if (event.target.value && event.target.value != query) {
+            setQuery(event.target.value)
+            return;
+          }
+        }}
         type="text"
         placeholder="Leitarorð..."
       />
@@ -104,6 +111,7 @@ export default function Home() {
           </styles.Error>
         </styles.LargeContainer>
         :
+        images.length != 0 &&
         <styles.ImagesContainerInf
           dataLength={images.length}
           next={getMoreImages}
@@ -119,12 +127,14 @@ export default function Home() {
           scrollThreshold="150px"
         >
           {images.map((item, i) => (
-            <styles.ImageContainer key={i}>
-              <styles.Image
-                src={item.link}
-                alt={item.snippet}
-              />
-            </styles.ImageContainer>
+            <styles.ImageLink key={i} href={item.link} target={"_blank"}>
+              <styles.ImageContainer>
+                <styles.Image
+                  src={item.link}
+                  alt={item.snippet}
+                />
+              </styles.ImageContainer>
+            </styles.ImageLink>
           ))}
           {hasMore && <styles.Loading/>}
         </styles.ImagesContainerInf>
@@ -133,5 +143,6 @@ export default function Home() {
         <styles.UpArrow/>
       </styles.UpButton>
     </styles.Container>
+    </>
   )
 }
