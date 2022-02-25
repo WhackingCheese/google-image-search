@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import * as styles from '../styles/index.styles';
+import Head from 'next/head';
 
 /**
  * Main page component. Relatively simple page so everything for the site is here.
@@ -112,6 +113,10 @@ export default function Home() {
    */
   return (
     <>
+    <Head>
+      <title>Júni - Verkefni</title>
+      <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+    </Head>
     <styles.Background/>
     <styles.Container>
       <styles.Title>Myndaleit</styles.Title>
