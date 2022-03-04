@@ -1,4 +1,4 @@
-## Verkefni fyrir Júni
+## Google Image Search Verkefni
 
 Skrifað með Nest.js.
 
